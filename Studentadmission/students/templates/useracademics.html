@@ -1,0 +1,122 @@
+{% extends 'userbase.html' %}
+{% block body %}
+<html>
+    <head><title>Accademic information</title></head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+       </head>
+       <style>
+        .form-group{
+          margin-bottom: 5px;
+         }
+          
+         label{
+          margin-bottom: 5px;
+         }
+         input,
+         input::-webkit-input-placeholder {
+             font-size: 11px;
+             padding-top: 3px;
+         } 
+         .main-login{
+          background-color: skyblue;
+            padding:50px;width:600px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+         }
+        span.input-group-addon i {
+            color: #009edf;
+            font-size: 17px;padding:10px;
+            width:50%;
+        }
+        .form-control {
+            height: auto!important;
+        padding: 8px 12px !important;
+        }
+       .input-group {
+        width:50%;
+        -webkit-box-shadow :0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+            }
+      </style>
+    <script>
+        function disableValidation() {
+            var form = document.getElementById("my-form");
+            // Disable the form validation
+            form.setAttribute("novalidate", "");
+        }
+    </script>
+    
+<body>
+
+    <form method="post" action="/user_academics" id="my-form">
+        <center>
+            <input type="hidden" name="user-id" value={{data}}>
+            <h2>Academic information</h2> 
+            <form class=" text-white py-3 px-3" action="/signup" method="post">
+                <div class="form-group">
+                <label for="institution">last institution</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-graduation-cap" ></i></span>
+            <input type="text"class="form-control" name="iname" value=""placeholder="Last attempted institute/colleage namerequired"><br><br>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exam">last exam</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-graduation-cap" ></i></span>
+            <input type="text" class="form-control" name="cls" value="" placeholder="Last Qualified exam"required><br><br>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="class">last class</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-graduation-cap" ></i></span>
+            <input type="text" class="form-control" name="qexam" value="" placeholder="Last attempted class"required><br><br>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="monthyear">Passing month and year</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-graduation-cap" ></i></span>
+            <input type="date" class="form-control"name="my" value="" placeholder="Passing month and year"><br><br>
+        </div>
+    </div>
+            <div class="form-group">
+                <label for="TM">Total marks</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-graduation-cap" ></i></span>
+            <input type="text"class="form-control" name="TM" value=""placeholder="Total marks"required><br><br>
+        </div>
+    </div>
+            <div class="form-group">
+                <label for="OM">Obtain marks</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-graduation-cap" ></i></span>
+            <input type="text" class="form-control" name="OM" value="" placeholder="Obtain marks"required><br><br>
+        </div>
+    </div>
+            <div class="form-group">
+                <label for="percent">Last Exam Percentage</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-graduation-cap" ></i></span>
+            <input type="text" class="form-control" name="percent" value="" placeholder="Last Exam Percentage"required><br><br>
+        </div>
+    </div>
+            <div class="form-group">
+                <label for="result">Last exam result</label>
+                   <div class="input-group">
+                     <span class="input-group-addon"><i class="fa fa-graduation-cap"></i></span>
+                      <select name="result" id="result" placeholder="Last Exam result">
+                        <option value="pass">Pass</option>
+                        <option value="A.T.K.T">A.T.K.T</option>
+                      </select>
+                   </div>
+            </div>
+            <input type="submit" value="back" name="action1" onclick="disableValidation()"/>
+            <input type="submit" value="next" name="action2" />
+        </center>
+    </form>
+</body>
+{% endblock %}
+</html>

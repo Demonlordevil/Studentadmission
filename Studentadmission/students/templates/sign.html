@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Box hover effects</title>
+        <link rel="stylesheet" type="text/css" href="static/css/boxes.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <div class="icon"><h4>User login</h4></div>
+                <div class="content">
+                    <h3>User login</h3>
+                    <p>Click here for login<br><a href="/login">Login</a></p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon"><h4>User registration</h4></div>
+                <div class="content">
+                    <h3>User registration</h3>
+                    <p>Click here for registration<br><a href="/signup">Register</a></p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon"><h4>Admin login</h4></div>
+                <div class="content">
+                    <h3>Admin login</h3>
+                    <p>Click here for login<br><a href="/adminlogin">Login</a></p>
+                </div>
+            </div>
+    </body>
+</html>
+{% endblock %}

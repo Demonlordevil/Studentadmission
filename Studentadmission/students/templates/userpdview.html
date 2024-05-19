@@ -1,0 +1,77 @@
+{% extends 'userbase.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student information</title>
+    </head>
+    <body>
+        <form action="" method="post">
+            <div class="row">
+                <div class="column">
+            <h2>Basic Information</h2>
+                <table cellspadding="0" cellspacing="0" width="30%">
+                <tr><th align="left">Roll no:</th><td>{{userinfo.id}}</td></tr>
+                <tr><th align="left">Name:</th><td>{{personalinfo.sname}}</td></tr>
+                <tr><th align="left">E-mail Id:</th><td>{{personalinfo.semail}}</td></tr>
+                <tr><th align="left">Gender:</th><td>{{personalinfo.sgender}}</td></tr>
+                <tr><th align="left">Mobile no.:</th><td>{{personalinfo.scon}}</td></tr>
+                <tr><th align="left">DOB:</th><td>{{personalinfo.sdob}}</td></tr>
+                <tr><th align="left">Birth Place:</th><td>{{personalinfo.sbirthp}}</td></tr>
+                <tr><th align="left">Nationality:</th><td>{{personalinfo.snationality}}</td></tr>
+                <tr><th align="left">Handicap:</th><td>{{personalinfo.shandicap}}</td></tr>
+                <tr><th align="left">Religion:</th><td>{{personalinfo.sreligion}}</td></tr>
+                <tr><th align="left">Caste:</th><td>{{personalinfo.scaste}}</td></tr>
+                <tr><th align="left">Sub-caste:</th><td>{{personalinfo.ssubcaste}}</td></tr>
+                <tr><th align="left">Category:</th><td>{{personalinfo.scategory}}</td></tr>
+            </table>
+            </div>
+            <div class="column">
+            <h2>Address Information</h2>
+            <table cellspadding="0" cellspacing="0" width="30%">
+                <tr><th align="left">Address:</th><td>{{personalinfo.saddre}}</td></tr>
+                <tr><th align="left">State:</th><td>{{personalinfo.sstate}}</td></tr>
+                <tr><th align="left">Pincode:</th><td>{{personalinfo.spcode}}</td></tr>
+            </table>
+            </div>
+            </div>
+            <h2>Parents Information</h2>
+            <table cellspadding="0" cellspacing="0" width="30%">
+                <tr><th align="left">Father's Name:</th><td>{{personalinfo.fname}}</td></tr>
+                <tr><th align="left">Mother's Name:</th><td>{{personalinfo.mname}}</td></tr>
+                <tr><th align="left">Father's Mobile no.:</th><td>{{personalinfo.fnum}}</td></tr>
+                <tr><th align="left">Father's Occupation:</th><td>{{personalinfo.focc}}</td></tr>
+                <tr><th align="left">Mother's Occupation:</th><td>{{personalinfo.mocc}}</td></tr>
+            </table>
+            <h2>Academic Information</h2>
+            <table cellspadding="0" cellspacing="0" width="30%">
+                <tr><th align="left">Previous Institution:</th><td>{{acadinfo.icname}}</td></tr>
+                <tr><th align="left">Previous Exam:</th><td>{{acadinfo.lqexam}}</td></tr>
+                <tr><th align="left">Previous Class:</th><td>{{acadinfo.lclass}}</td></tr>
+                <tr><th align="left">Passing Month & Year:</th><td>{{acadinfo.pmy}}</td></tr>
+                <tr><th align="left">Total Marks:</th><br><td>{{acadinfo.tmark}}</td></tr>
+                <tr><th align="left">Obtained Marks:</th><td>{{acadinfo.omark}}</td></tr>
+                <tr><th align="left">Percentage:</th><td>{{acadinfo.leper}}</td></tr>
+                <tr><th align="left">Result:</th><td>{{acadinfo.lexamr}}</td></tr>
+            </table>
+
+            <h2>Course Information</h2>
+            <table cellspadding="0" cellspacing="0" width="30%">
+                <tr><th align="left">Stream:</th><td>{{couseinfo.stream}}</td></tr>
+                <tr><th align="left">Course:</th><td>{{couseinfo.course}}</td></tr>
+                <tr><th align="left">Class:</th><td>{{couseinfo.classes}}</td></tr>
+            </table>
+
+            <h2>Uploaded Documents</h2>
+            <table cellspadding="0" cellspacing="0" width="30%">
+                <tr><th align="left">Photo:</th><td><a href="{{ url_for('image_view', image_id=userinfo.id, image_of='photo')}}" target="_blank">View</a></td></tr>
+                <tr><th align="left">Aadhar Card:</th><td><a href="{{ url_for('image_view', image_id=userinfo.id, image_of='adhar')}}" target="_blank">View</a></td></tr>
+                <tr><th align="left">Sign:</th><td><a href="{{ url_for('image_view', image_id=userinfo.id, image_of='sign')}}" target="_blank">View</a></td></tr>
+                <tr><th align="left">Previous Exam Result:</th><td><a href="{{ url_for('image_view', image_id=userinfo.id, image_of='result')}}" target="_blank">View</a></td></tr>
+                <tr><th align="left">Caste Certificate:</th><br><td><a href="{{ url_for('image_view', image_id=userinfo.id, image_of='caste')}}" target="_blank">View</a></td></tr>
+                <tr><th align="left">Domicile Certicate:</th><td><a href="{{ url_for('image_view', image_id=userinfo.id, image_of='domecile')}}" target="_blank">View</a></td></tr>
+            </table>
+        </form>
+    </body>
+    {% endblock %}
+</html>

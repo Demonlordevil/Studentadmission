@@ -1,0 +1,36 @@
+{% extends 'adbase.html' %}
+{% block body %}
+<table border="1" cellspacing="0" width="70%">
+    <tr><th>Roll no</th>
+      <th>Name</th>
+      <th>Class</th>
+      <th>Last Exam Percentage</th>
+      <th>Photo</th>
+      <th>Sign</th>
+      <th>Adhaar card</th>
+      <th>Last Exam Result</th>
+      <th>Domecile Certificate</th>
+      <th>Caste Certeficate if any</th>
+    </tr>
+
+</thead>
+<tbody>
+{% for academy, student in zipped %}
+  <tr>
+    <th scope="row">{{academy.acid}}</th>
+    <th scope="row">{{student.sname}}</th>
+    <th scope="row">{{academy.lclass}}</th>
+    <th scope="row">{{academy.leper}}</th>
+    <th scope="row"><a href="{{ url_for('image_view', image_id=academy.acid, image_of='photo')}}" target="_blank">View</a></th>
+    <th scope="row"><a href="{{ url_for('image_view', image_id=academy.acid, image_of='sign')}}" target="_blank">View</a></th>
+    <th scope="row"><a href="{{ url_for('image_view', image_id=academy.acid, image_of='adhar')}}" target="_blank">View</a></th>
+    <th scope="row"><a href="{{ url_for('image_view', image_id=academy.acid, image_of='result')}}" target="_blank">View</a></th>
+    <th scope="row"><a href="{{ url_for('image_view', image_id=academy.acid, image_of='domecile')}}" target="_blank">View</a></th>
+    <th scope="row"><a href="{{ url_for('image_view', image_id=academy.acid, image_of='caste')}}" target="_blank">View</a></th>
+      </tr>
+{% endfor %}
+
+</tbody>
+</table>
+
+{% endblock %}

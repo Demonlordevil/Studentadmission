@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+    <body>
+               <h2>Arts</h2>
+            <table border="1" cellspacing="0" width="80%">
+                <tr><th>level</th><th>Courses</th><th>Subject</th></tr>
+                <tr><td rowspan="2">Under Graduate(UG) </td><td> B.A(special level)</td><td>Marathi , Sanskrit , Hindi , Englist , German ,
+                    Philosophy , Economics , History , Political Science , Sociology , Psychology , Geography , Mathematics</td></tr>
+                    <tr><td> B.A(only at general level) </td><td>Logic , Education , Physical Education , Statistics</td></tr>
+                    <tr><td>Post Graduate(PG)</td><td> M.A </td><td>Philosophy , Economics , Psychology , Geography , Political Science ,
+                        Mathematics , Sociology , English</td></tr>
+            </table>
+            <h2>Science</h2>
+            <table>
+                <table border="1" cellspacing="0" width="70%">
+                <tr><th>level</th><th>Courses</th><th>Subject</th></tr>
+                <tr><td>Under Graduate(UG) </td><td>B.Sc </td><td>Chemistry , Physics ,Electronics , Botony , Zoology , mathematics
+                    , Statistics , Geography , Computer  Science(BCS) </td></tr>
+                <tr><td>Post Graduate(PG) </td><td>M.Sc </td><td> Chemistry , Physics , Botony , mathematics
+                , Geography , Computer Science(BCS)</td></tr>
+            </table>
+            <h2>Commerce</h2>
+            <table>
+                <table border="1" cellspacing="0" width="50%">
+                <tr><th>level</th><th>Courses</th><th>Subject</th></tr>
+                <tr><td>Under Graduate(UG)</td><td>B.Com , B.B.A</td><td>Accounts , tally</td></tr>
+                <tr><td>Post Graduate(PG)</td><td>M.Com</td><td>Accounts , tally</td></tr>
+            </table>
+        </form>
+        {% endblock %}
+    </body>
+</html>
+

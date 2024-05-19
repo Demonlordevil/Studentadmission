@@ -1,0 +1,23 @@
+{% extends 'userbase.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3>Transaction Details</h3>
+        <form  method="post">
+            <table border="1" cellspacing="0" width="50%">
+                {% for post in query %}
+                <tr><td>Transaction Id</td><td scope="row">{{post.id}}</td></tr>
+               <!--<tr><td>Transaction date and time</td><td>          </td></tr>-->
+                <tr><td>Student name</td><td scope="row">{{post.sname}}        </td></tr>
+                <tr><td>Student email</td><td scope="row">{{post.semail}}            </td></tr>
+                <!--<tr><td>Payment mode</td><td>          </td></tr>
+                <tr><td>Transaction status</td><td>            </td></tr>-->
+                {% endfor %}
+                <tr><td>Amount</td><td> 10$</td></tr>
+            </table>
+            <h4>For any queries please contact the merchant of AWS  unit<br>Regards,<br>Auto team</h4>
+        </form>
+    </body>
+    {% endblock %}
+</html>

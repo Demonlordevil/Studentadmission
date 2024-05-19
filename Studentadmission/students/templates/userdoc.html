@@ -1,0 +1,125 @@
+{% extends 'userbase.html' %}
+{% block body %}
+<html>
+    <head><title>Register</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <script>
+          function disableValidation() {
+            var form = document.getElementById("my-doc");
+            // Disable the form validation
+            form.setAttribute("novalidate", "");
+        }
+        </script>
+       </head>
+       <style>
+        .form-group{
+          margin-bottom: 5px;
+         }
+         .visually-hidden {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          left: -10000px;
+          overflow: hidden;
+          }
+
+          .control, fieldset {
+            margin: 6px 0;
+          }
+
+          label {
+          display: inline-block;
+          width: 120px;
+          vertical-align: top;
+          }
+
+          .required {
+            color: red;
+          }
+
+
+         input,
+         input::-webkit-input-placeholder {
+             font-size: 11px;
+             padding-top: 3px;
+         } 
+         .main-login{
+          background-color: skyblue;
+            padding:50px;width:600px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+         }
+        span.input-group-addon i {
+            color: #009edf;
+            font-size: 17px;padding:10px;
+            width:50%;
+        }
+        .form-control {
+            height: auto!important;
+        padding: 8px 12px !important;
+        }
+       .input-group {
+        width:50%;
+        -webkit-box-shadow :0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+            }
+            .g-recaptcha{
+              width:50%;
+            }
+      </style>
+    </head>
+
+<form action="/upload_image" method="POST"  enctype="multipart/form-data"id="my-doc">
+    <center>
+      <input type="hidden" name="user-id" value={{data}}>
+        <h2>Upload Documents</h2>
+            <div class="form-group">
+              <label for="name">Upload Photo<span aria-hidden="true" class="required">*</span></label>
+            </div>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-folder-open"></i></span>
+      <input type="file" id="imagename" class="form-control" accept="image/png,image/jpeg,image/jpg" name="imagename"required> <br>
+    </div>
+</div>
+<div class="form-group">
+  <label for="name">Upload Adhar Card<span aria-hidden="true" class="required">*</span></label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-folder-open"></i></span>
+<input type="file"  id="imagename1" class="form-control" accept="image/png,image/jpeg,image/jpg" name="imagename1"required> <br>
+</div>
+</div>
+<div class="form-group">
+  <label for="name">Upload Sign <span aria-hidden="true" class="required">*</span></label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-folder-open"></i></span>
+<input type="file"  id="imagename2" class="form-control" accept="image/png,image/jpeg,image/jpg" name="imagename2"required> <br>
+</div>
+</div>
+<div class="form-group">
+  <label for="name">Upload Last Qualified Exam Result<span aria-hidden="true" class="required">*</span></label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-folder-open"></i></span>
+<input type="file"  id="imagename3" class="form-control" accept="image/png,image/jpeg,image/jpg" name="imagename3"required> <br>
+</div>
+</div>
+<div class="form-group">
+    <label for="cert">Upload caste certificate(if any)</label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-folder-open"></i></span>
+<input type="file"  id="imagename4" class="form-control" accept="image/png,image/jpeg,image/jpg" name="imagename4"required> <br>
+</div>
+</div>
+<div class="form-group">
+  <label for="name">Upload Domicile<span aria-hidden="true" class="required">*</span></label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-folder-open"></i></span>
+<input type="file"  id="imagename5" class="form-control" accept="image/png,image/jpeg,image/jpg" name="imagename5"required> <br>
+</div>
+</div>
+<input type="hidden" name="username" value={{data}}>
+<input type="submit" value="back" name="action1" onclick="disableValidation()"/>
+            <input type="submit" value="next" name="action2" />
+    </center>
+</form>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'userbase.html' %}
+{% block body %}
+<html>
+    <head>
+        <script>
+            function disableValidation() {
+              var form = document.getElementById("my-course");
+              // Disable the form validation
+              form.setAttribute("novalidate", "");
+          }
+          </script>
+    </head>
+    <body>
+        <form action="/courses" method="post" my-course>
+            <center>
+                <h2>courses information</h2>
+                Strems: 
+                <select name="Strems[]">Strems<br>
+                    <option value=Science>science</option><br>
+                    <option value=Arts>Arts</option><br>
+                    <option value=commerce>commerce</option><br>
+                </select><br><br>
+                Courses:
+                <select name="courses[]"><br>
+                <option value=bsc(maths)>bsc(maths)</option><br>
+                <option value=bsc(chem)>bsc(chem)</option><br>
+                <option value=bsc(stat)>bsc(stat)</option><br>
+                <option value=bsc(cs)>bsc(cs)</option><br>
+                <option value=bsc(ca)>bsc(ca)</option><br>
+                <option value=bsc(micro)>bsc(micro)</option><br>
+                <option value=bsc(biotech)>bsc(biotech)</option><br>
+            </select><br><br>
+            Class:
+            <select name="class[]"><br>
+            <option value=FY>FY</option><br>
+            <option value=SY>SY</option><br>
+            <option value=TY>TY</option><br>
+        </select><br><br>
+        <input type="submit" value="back" name="action1" onclick="disableValidation()"/>
+            <input type="submit" value="next" name="action2" />
+            </center>
+            {% endblock %}
+     </body>
+</html>

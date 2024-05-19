@@ -1,0 +1,252 @@
+{% extends 'userbase.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Register</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <script>
+          function disableValidation() {
+            var form = document.getElementById("my-pd");
+            // Disable the form validation
+            form.setAttribute("novalidate", "");
+        }
+        </script>
+       </head>
+       <style>
+        .form-group{
+          margin-bottom: 5px;
+         }
+          
+         .visually-hidden {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          left: -10000px;
+          overflow: hidden;
+          }
+
+          .control, fieldset {
+            margin: 6px 0;
+          }
+
+          label {
+          display: inline-block;
+          width: 120px;
+          vertical-align: top;
+          }
+
+          .required {
+            color: red;
+          }
+         input,
+         input::-webkit-input-placeholder {
+             font-size: 11px;
+             padding-top: 3px;
+         } 
+         .main-login{
+          background-color: skyblue;
+            padding:50px;width:600px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+         }
+        span.input-group-addon i {
+            color: #009edf;
+            font-size: 17px;padding:10px;
+            width:50%;
+        }
+        .form-control {
+            height: auto!important;
+        padding: 8px 12px !important;
+        }
+       .input-group {
+        width:50%;
+        -webkit-box-shadow :0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+            }
+            .g-recaptcha{
+              width:50%;
+            } 
+      </style>
+          
+    </head>
+        <body>
+            <form method="post" action="/user_pd" id="my-pd">
+            <center>
+                <h2>Basic information</h2> 
+                  <div class="form-group">
+                    <label for="name">Student Name<span aria-hidden="true" class="required">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" ></i></span>
+                    <input type="text" class="form-control" name="stud" id="name" placeholder="Enter your full name"required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="name">Your Email<span aria-hidden="true" class="required">*</span></label>
+                 <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope fa" ></i></span>
+                  <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email"required />
+                 </div>
+                </div>
+                <div class="form-group">
+                  <label for="name">Your Contact Number<span aria-hidden="true" class="required">*</span></label>
+                       <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-phone" ></i></span>
+                      <input type="text" class="form-control" name="num" id="contact" placeholder="Enter your Contact Number"required/>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                  <label for="name">GENDER<span aria-hidden="true" class="required">*</span></label>
+                       <div class="input-group">
+                         <span class="input-group-addon"><i class="fa fa-user fa"></i></span>
+                          <select name="radio_option" id="gender"required>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Other">Other</option>
+                          </select>
+                       </div>
+                </div>
+    
+            <div class="form-group">
+              <label for="name">Birth Date<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-calendar" ></i></span>
+                  <input type="date" class="form-control" name="DOB" id="Dob" placeholder="Enter your birth date"required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Birth Place<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-home  " ></i></span>
+                  <input type="text" class="form-control" name="POB" id="POB" placeholder="  Enter your birth place"required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Nationality<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-globe" ></i></span>
+                  <input type="text" class="form-control" name="nation" id="nation" placeholder="Enter your nationality"required/>
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Handicap<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                     <span class="input-group-addon"><i class="fa fa-user fa"></i></span>
+                      <select name="hand" id="handicap"required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                      </select>
+                   </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Your Religion<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" ></i></span>
+                  <input type="text" class="form-control" name="religion" id="religion" placeholder="Enter your religion"required/>
+                </div>
+            </div>
+
+             <div class="form-group">
+              <label for="name">Your Caste<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" ></i></span>
+                  <input type="text" class="form-control" name="caste" id="caste" placeholder="Enter your Caste"required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Your Sub-Caste<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone" ></i></span>
+                  <input type="text" class="form-control" name="scaste" id="scaste" placeholder="Enter your Sub-caste"required/>
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Your Category<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                     <span class="input-group-addon"><i class="fa fa-universal-access"></i></span>
+                      <select name="cat" id="category"required>
+                        <option value="OBC">OBC</option>
+                        <option value="ST">ST</option>
+                        <option value="NT">NT</option>
+                        <option value="SC">SC</option>
+                        <option value="OPEN">OPEN</option>
+                      </select>
+                   </div>
+                   <h2>Address information</h2>
+                   <div class="form-group">
+                    <label for="name">Your Address<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-home" ></i></span>
+                  <input type="text" class="form-control" name="add" id="add" placeholder="Enter your local address"required/>
+                </div>
+            </div>
+             <div class="form-group">
+              <label for="name">Your State<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-globe" ></i></span>
+                  <input type="text" class="form-control" name="state" id="state" placeholder="Enter your State"required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Your Pincode<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-globe" ></i></span>
+                  <input type="text" class="form-control" name="pin" id="pin" placeholder="Enter Pincode"required/>
+                </div>
+            </div>
+  
+            <h2>Parents information</h2> 
+
+            <div class="form-group">
+              <label for="name">Your Father Name<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-male" ></i></span>
+                  <input type="text" class="form-control" name="father" id="father" placeholder="Enter Father Name"required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Your Mother Name<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-female" ></i></span>
+                  <input type="text" class="form-control" name="mother" id="mother" placeholder="Enter Mother Name"required/>
+                </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="name">Your Father's Number<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone" ></i></span>
+                  <input type="text" class="form-control" name="fnum" id="fnum" placeholder="Enter Mobile No"required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Your Father's Occupation<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-briefcase" ></i></span>
+                  <input type="text" class="form-control" name="focc" id="focc" placeholder="Enter Father's Occupation"required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Your Mother's Occupation<span aria-hidden="true" class="required">*</span></label>
+                   <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-briefcase" ></i></span>
+                  <input type="text" class="form-control" name="mocc" id="mocc" placeholder="Enter Mother's Occupation"required/>
+                </div>
+            </div>
+            <input type="submit"  value="back" name="action1" onclick="disableValidation()"/>
+            <input type="submit" value="next" name="action2" />
+            </center>
+        </form> 
+     </body>
+     {% endblock %}
+</html>

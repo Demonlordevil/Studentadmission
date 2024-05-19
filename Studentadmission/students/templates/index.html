@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="utf-8">
+    <title>Designing home page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/home.css">
+</head>
+    <body>
+        <div class="container">
+            <div class="inner">
+                <img src="static/images/logo1.png" height="200" width="300">
+                <h1>Welcome to AVS Software</h1>
+                <a href='{{ url_for('about')}}'><button class="btn-btn-light" >Get Started</button></a>            
+            </div>
+        </div>
+        
+    </body>
+</html>
+
+
+
+{% endblock %}
