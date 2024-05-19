@@ -26,7 +26,7 @@ otp=randint(000000,999999)
 
 app.secret_key = 'xyzsdfg'
 public_key = "pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-stripe.api_key = "sk_test_BQokikJOvBiI2HlWgH4olfQ2"
+stripe.api_key = "your stripe key"
 # Configure MySQL connection
 dbd = MySQLdb.connect(host="localhost", user="root", passwd="", db="student_portal")
 
@@ -301,7 +301,7 @@ def verify():
     if not user:
         flash('user is not registered')
         return redirect(url_for('alert_popup'))
-    msg=Message(subject='OTP',sender='adityatanvoji@gmail.com',recipients=[email])
+    msg=Message(subject='OTP',sender='developeremail',recipients=[email])
     msg.body=str(otp)
     mail.send(msg)
     return render_template('verify.html', data=email)
