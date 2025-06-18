@@ -17,15 +17,15 @@ mail=Mail(app)
 
 app.config["MAIL_SERVER"]='smtp.gmail.com'
 app.config["MAIL_PORT"]=465
-app.config["MAIL_USERNAME"]='adityatanvoji@gmail.com'
-app.config['MAIL_PASSWORD']='spxy vpdh mxav elyy'                    #you have to give your password of gmail account
+app.config["MAIL_USERNAME"]='your email'
+app.config['MAIL_PASSWORD']='your app password'                    #you have to give your password of gmail account
 app.config['MAIL_USE_TLS']=False
 app.config['MAIL_USE_SSL']=True
 mail=Mail(app)
 otp=randint(000000,999999)
 
-app.secret_key = 'xyzsdfg'
-public_key = "pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+app.secret_key = ''
+public_key = "]"
 stripe.api_key = "your stripe key"
 # Configure MySQL connection
 dbd = MySQLdb.connect(host="localhost", user="root", passwd="", db="student_portal")
